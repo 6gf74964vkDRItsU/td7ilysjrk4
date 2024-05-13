@@ -49,12 +49,11 @@ function initYoutubePlayer() {
 
 Mouseover = (el) => {
     let yt_object = YT.get(el.id)
-    yt_object.playVideo();
+    yt_object.unMute();
 }
 
 Mouseout = (el) => {
     let yt_object = YT.get(el.id)
-    //yt_object.pauseVideo();
     yt_object.mute();
 }
 
