@@ -1,0 +1,56 @@
+<html>
+
+
+<script src="https://www.youtube.com/player_api"></script>
+<script src="https://www.youtube.com/iframe_api"></script>
+<!-- Jquery -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<!-- Youtube player API -->
+<script src="//www.youtube.com/player_api"></script>
+
+
+<body>
+
+
+<div id="player0" name="vp" videoId="MA9PjVMjsYM">
+<iframe title="YouTube video player" scrolling="no" frameborder="0" allowfullscreen></iframe>
+</div>
+
+<p></p>
+
+<div id="player1" name="vp" videoId="1yBvIPKMEYk">
+<iframe title="YouTube video player" scrolling="no" frameborder="0" allowfullscreen></iframe>
+</div>
+
+
+<script>
+
+jQuery(document).ready(function(){
+    initYoutubePlayer();
+});
+
+function initYoutubePlayer() {
+    jQuery('div[name="vp"]').each(function(){
+        let vid =jQuery(this).attr('videoId');
+        let player = new YT.Player(this, {
+        height: '480',
+        width: '640',
+        enablejsapi: 1,
+        videoId: vid,
+
+        playerVars: {
+            'controls': 1, 
+            'rel': 0,
+            'playlist': vid,
+            'loop': 1,
+            'modestbranding': 1
+        },
+        });
+    });
+}
+
+</script>
+
+
+</body>
+</html>
