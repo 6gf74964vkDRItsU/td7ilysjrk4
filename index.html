@@ -16,7 +16,7 @@ input {
     
 <body>
 
-<div style="display: flex;">
+<div style="display: flex; center:0px">
     <div id="player0" name="vp" onmouseover="Mouseover(this)" onmouseout="Mouseout(this)" videoId="">
     <iframe title="YouTube video player" scrolling="no" frameborder="0" allowfullscreen></iframe>
     </div>
@@ -50,7 +50,7 @@ function initYoutubePlayer() {
         let vid =jQuery(this).attr('videoId');
         let player = new YT.Player(this, {
         height: '435',
-        width: '980',
+        width: '900',
         enablejsapi: 1,
         videoId: vid,
 
@@ -69,7 +69,7 @@ changeVideo = (el, id) => {
     let yt_object = YT.get(id)
     yt_object.loadVideoById(el.value);
 }
-    
+/*
 Mouseover = (el) => {
     let yt_object = YT.get(el.id)
     yt_object.unMute();
@@ -79,7 +79,8 @@ Mouseout = (el) => {
     let yt_object = YT.get(el.id)
     yt_object.mute();
 }
-
+*/
+        
 </script>
 
 
