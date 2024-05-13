@@ -1,24 +1,28 @@
 <html>
-
 <script src="https://www.youtube.com/player_api"></script>
 <script src="https://www.youtube.com/iframe_api"></script>
 <!-- Jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <!-- Youtube player API -->
 <script src="//www.youtube.com/player_api"></script>
-
 <body>
 
 
-<div id="player0" name="vp" videoId="OIBODIPC_8Y">
+
+    
+<div id="player0" name="vp" onmouseover="Mouseover(this)" onmouseout="Mouseout(this)" videoId="OIBODIPC_8Y">
 <iframe title="YouTube video player" scrolling="no" frameborder="0" allowfullscreen></iframe>
 </div>
-<div id="player1" name="vp" videoId="CkvWJNt77mU">
+<div id="player1" name="vp" onmouseover="Mouseover(this)" onmouseout="Mouseout(this)" videoId="CkvWJNt77mU">
 <iframe title="YouTube video player" scrolling="no" frameborder="0" allowfullscreen></iframe>
 </div>
+<div id="player1" name="vp" onmouseover="Mouseover(this)" onmouseout="Mouseout(this)" videoId="CkvWJNt77mU">
+<iframe title="YouTube video player" scrolling="no" frameborder="0" allowfullscreen></iframe>
+</div>
+
+    
 
 <script>
-
 jQuery(document).ready(function(){
     initYoutubePlayer();
 });
@@ -41,6 +45,17 @@ function initYoutubePlayer() {
         },
         });
     });
+}
+
+Mouseover = (el) => {
+    let yt_object = YT.get(el.id)
+    yt_object.playVideo();
+}
+
+Mouseout = (el) => {
+    let yt_object = YT.get(el.id)
+    //yt_object.pauseVideo();
+    yt_object.mute();
 }
 
 </script>
