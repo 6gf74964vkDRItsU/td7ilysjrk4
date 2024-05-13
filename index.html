@@ -14,7 +14,7 @@ input {
       }
 </style>
     
-<body>
+<body style="margin: 0px;">
 
 <div style="text-align: center;">
     <div id="player0" name="vp" onmouseover="Mouseover(this)" onmouseout="Mouseout(this)" videoId="">
@@ -50,7 +50,7 @@ function initYoutubePlayer() {
         let vid =jQuery(this).attr('videoId');
         let player = new YT.Player(this, {
         height: '448',
-        width: '800',
+        width: '797',
         enablejsapi: 1,
         videoId: vid,
 
