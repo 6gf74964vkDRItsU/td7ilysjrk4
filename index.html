@@ -65,9 +65,16 @@ function initYoutubePlayer() {
     });
 }
 
+function getURLParams(url) {
+  return Object.fromEntries(new URL(url).searchParams.entries());
+}
+        
+var params = getURLParams('https://www.google.com/search?q=query+string&oq=query+string&aqs=chrome..69i57j69i60l2j0l3.10413j0j7&sourceid=chrome&ie=UTF-8');
+
 changeVideo = (el, id) => {
     let yt_object = YT.get(id)
-    yt_object.loadVideoById(el.value);
+        let params = getURLParams(el.value);
+    yt_object.loadVideoById(params['v']);
 }
 /*
 Mouseover = (el) => {
