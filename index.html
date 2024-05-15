@@ -17,19 +17,19 @@ input {
 <body style="margin: 0px;">
 
 <div style="text-align: center;">
-    <div id="player0" name="vp" onmouseover="Mouseover(this)" onmouseout="Mouseout(this)" videoId="">
+    <div id="player0" name="vp" videoId="">
     <iframe title="YouTube video player" scrolling="no" frameborder="0" allowfullscreen></iframe>
     </div>
-    <div id="player1" name="vp" onmouseover="Mouseover(this)" onmouseout="Mouseout(this)" videoId="">
+    <div id="player1" name="vp" videoId="">
     <iframe title="YouTube video player" scrolling="no" frameborder="0" allowfullscreen></iframe>
     </div>
 </div>
 
 <div style="text-align: center;">
-    <div id="player2" name="vp" onmouseover="Mouseover(this)" onmouseout="Mouseout(this)" videoId="">
+    <div id="player2" name="vp" videoId="">
     <iframe title="YouTube video player" scrolling="no" frameborder="0" allowfullscreen></iframe>
     </div>
-    <div id="player3" name="vp" onmouseover="Mouseover(this)" onmouseout="Mouseout(this)" videoId="">
+    <div id="player3" name="vp" videoId="">
     <iframe title="YouTube video player" scrolling="no" frameborder="0" allowfullscreen></iframe>
     </div>
 </div>
@@ -62,6 +62,12 @@ function initYoutubePlayer() {
             'modestbranding': 1
         },
         });
+
+        //hide player
+        document.getElementById( jQuery(this).attr('id') ).style.display = 'none';
+
+            
+            
     });
 }
 
@@ -69,27 +75,14 @@ function getURLParams(url) {
   return Object.fromEntries(new URL(url).searchParams.entries());
 }
         
-var params = getURLParams('https://www.google.com/search?q=query+string&oq=query+string&aqs=chrome..69i57j69i60l2j0l3.10413j0j7&sourceid=chrome&ie=UTF-8');
-
 changeVideo = (el, id) => {
     let yt_object = YT.get(id)
         let params = getURLParams(el.value);
     yt_object.loadVideoById(params['v']);
 }
-/*
-Mouseover = (el) => {
-    let yt_object = YT.get(el.id)
-    yt_object.unMute();
-}
 
-Mouseout = (el) => {
-    let yt_object = YT.get(el.id)
-    yt_object.mute();
-}
-*/
         
 </script>
-
 
 </body>
 </html>
