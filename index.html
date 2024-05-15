@@ -77,7 +77,7 @@ changeVideo = (el, id) => {
     yt_object.loadVideoById(params['v']);
         if(el.value.length>0){
                 //show player
-            document.getElementById(id).style.display = 'block';
+            document.getElementById(id).style.display = 'unset';
         }else{
              document.getElementById(id).style.display = 'none';
         }
