@@ -18,7 +18,7 @@ input {
     
 <div style="height:100%; width:100%; display: inline-grid; text-align: center;">
     
-    <div style="width:100%; display: flex; text-align: center;">
+    <div id="d1" style="width:100%; display: flex; text-align: center;">
         <div id="player0" name="vp" videoId="">
         <iframe title="YouTube video player" scrolling="no" frameborder="0" allowfullscreen></iframe>
         </div>
@@ -27,7 +27,7 @@ input {
         </div>
     </div>
 
-    <div style="width:100%; display: flex; text-align: center;">
+    <div id="d2" style="width:100%; display: flex; text-align: center;">
         <div id="player2" name="vp" videoId="">
         <iframe title="YouTube video player" scrolling="no" frameborder="0" allowfullscreen></iframe>
         </div>
@@ -85,6 +85,13 @@ changeVideo = (el, id) => {
         }else{
              document.getElementById(id).style.display = 'none';
         }
+
+        if(document.getElementById('player2').style.display=='none' && document.getElementById('player3').style.display=='none'){
+                document.getElementById('d2').style.display='none';
+        }else{
+                document.getElementById('d2').style.display='unset';
+        }
+        
     let yt_object = YT.get(id)
     let params = el.value.length>0 ? getURLParams(el.value)['v'] : 0;
     yt_object.loadVideoById(params);
