@@ -100,7 +100,7 @@ changeVideo = (el, id) => {
     let yt_object = YT.get(id)
     let params = el.value.length>0 ? getURLParams(el.value)['v'] : 0;
     let paramsTime = 0;
-  if(typeof getURLParams(el.value)['t']!=='undefined' && typeof getURLParams(el.value)['t']!=='null'){
+  if(typeof getURLParams(el.value)!='undefined' && getURLParams(el.value)['t']){
     paramsTime=getURLParams(el.value)['t'].replace("s", "");
   }
     yt_object.loadVideoById(params, paramsTime);
